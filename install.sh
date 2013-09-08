@@ -26,11 +26,12 @@ install-homedir() {
   
 
 uninstall-homedir() {
-	echo "Uninstalling zsh, vim, and everything else from ${DEST}..."
+	echo "Uninstalling homedir stuff from ${DEST}..."
 	$rm_cmd -rf ${DEST}/bin
 	$rm_cmd -rf ${DEST}/bin-freebsd
 	$rm_cmd -rf ${DEST}/bin-darwin
 	$rm_cmd -rf ${DEST}/how-to
+	$rm_cmd -rf ${DEST}/.gitconfig
 }
 
 uninstall-homedir
