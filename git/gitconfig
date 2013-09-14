@@ -45,6 +45,7 @@
     pov = pull -v origin
     prune = remote prune
     prune-all = !git remote | xargs -n 1 git remote prune
+    push-all = push -v origin HEAD
     qstat = status --untracked-files=no
     search = log --pretty=short -S
     st = status
