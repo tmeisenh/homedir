@@ -33,6 +33,7 @@
     history = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     ignore = !([ ! -e .gitignore ] && touch .gitignore) | echo $1 >>.gitignore
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    loq = log
     log-graph = log --all --graph --decorate
     log-refs = log --all --graph --decorate --oneline --simplify-by-decoration --no-merges
     log-timeline = log --format='%h %an %ar - %s'
