@@ -20,6 +20,10 @@ install-homedir() {
 
   echo "setting up git..."
   $cp_cmd -a ${SRC}/git/gitconfig ${DEST}/.gitconfig
+
+  echo "setting up tmux..."
+  $cp_cmd -a ${SRC}/tmux.conf ${DEST}/.tmux.conf
+  $cp_cmd -a ${SRC}/tmuxinator ${DEST}/.tmuxinator
  
 	echo "DONE with install tasks."
 }
@@ -32,6 +36,8 @@ uninstall-homedir() {
 	$rm_cmd -rf ${DEST}/bin-darwin
 	$rm_cmd -rf ${DEST}/how-to
 	$rm_cmd -rf ${DEST}/.gitconfig
+	$rm_cmd -rf ${DEST}/.tmux.conf
+  $rm_cmd -rf ${DEST}/.tmuxinator
 }
 
 uninstall-homedir
