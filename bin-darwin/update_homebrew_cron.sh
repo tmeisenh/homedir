@@ -7,4 +7,4 @@ if [ ! -f "$(which brew)" ]; then
   exit 1
 fi
 
-(brew update && brew upgrade && brew doctor && brew cleanup)
+(brew update && brew upgrade ; brew doctor ; brew cleanup)
