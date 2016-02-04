@@ -62,9 +62,11 @@ echo "Installing caskroom"
 brew install caskroom/cask/brew-cask
 
 casks=(
+  cheatsheet
   google-chrome
   iterm2
   rowanj-gitx
+  skype
   vagrant
   vagrant-manager
   virtualbox
