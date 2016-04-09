@@ -1,6 +1,7 @@
 [user]
 	  name = Travis Meisenheimer
-    email = tmeisenh@gmail.com
+    email = travis@indexoutofbounds.com
+	  signingkey = FC14F9C3
 
 [github]
     user = tmeisenh
