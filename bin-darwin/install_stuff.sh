@@ -58,6 +58,10 @@ echo ""
 echo "Installing development brews..."
 brew install "${dev_stuff[@]}"
 
+echo ""
+echo "Installing ctags..."
+brew install ctags --HEAD
+
 echo "Installing caskroom"
 brew install caskroom/cask/brew-cask
 
