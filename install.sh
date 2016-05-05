@@ -24,6 +24,9 @@ install-homedir() {
   echo "setting up tmux..."
   $cp_cmd -a ${SRC}/tmux.conf ${DEST}/.tmux.conf
   $cp_cmd -a ${SRC}/tmuxinator ${DEST}/.tmuxinator
+
+
+  $cp_cmd -a ${SRC}/ctags ${DEST}/.ctags
  
 	echo "DONE with install tasks."
 }
@@ -38,6 +41,7 @@ uninstall-homedir() {
 	$rm_cmd -rf ${DEST}/.gitconfig
 	$rm_cmd -rf ${DEST}/.tmux.conf
   $rm_cmd -rf ${DEST}/.tmuxinator
+  $rm_cmd -rf ${DEST}/.ctags
 }
 
 uninstall-homedir
