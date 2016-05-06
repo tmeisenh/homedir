@@ -43,6 +43,7 @@ core_stuff=(
 
 dev_stuff=(
   automake 
+  cloc
   cmake 
   git 
   ruby-build 
