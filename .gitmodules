@@ -1,6 +1,6 @@
 [submodule "dotfiles"]
 	path = dotfiles
-	url = http://github.com/tmeisenh/dotfiles.git
+	url = https://github.com/tmeisenh/dotfiles.git
 [submodule "vim"]
 	path = vim
-	url = http://github.com/tmeisenh/vim.git
+	url = https://github.com/tmeisenh/vim.git
