@@ -22,27 +22,14 @@
     br = branch
     ci = commit -v
     co = checkout
-    cp = cherry-pick
     di = diff
-    graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-    history = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    loq = log
-    log-graph = log --all --graph --decorate
-    log-refs = log --all --graph --decorate --oneline --simplify-by-decoration --no-merges
-    log-timeline = log --format='%h %an %ar - %s'
-    log-local = log --oneline origin..HEAD
-    log-fetched = log --oneline HEAD..origin/master
-    patch = log -p --no-walk # generate patch file from a commit.
-    pick = cherry-pick
     st = status
     staged = diff --staged
     sub = submodule update --init --recursive
     svn-pull = !git svn fetch && git svn rebase
     svn-push = !git svn dcommit
     uncommit = reset --soft HEAD^
-    unmerge = reset --hard ORIG_HEAD
     unstage = reset HEAD --
     wipe = !git reset --hard; git clean -fd
 
