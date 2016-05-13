@@ -29,6 +29,7 @@ core_stuff=(
   htop 
   htop-osx 
   libressl
+  progress
   rbenv 
   reattach-to-user-namespace 
   sqlite 
@@ -36,6 +37,7 @@ core_stuff=(
   unrar 
   vim --env-std --override-system-vim 
   vimpager 
+  watch
   wget 
   xctool 
   zsh 
