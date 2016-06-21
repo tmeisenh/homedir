@@ -28,7 +28,7 @@ core_stuff=(
   findutils
   htop 
   htop-osx 
-  libressl
+  openssl
   progress
   rbenv 
   reattach-to-user-namespace 
@@ -90,7 +90,7 @@ echo "cleanining up brew..."
 brew cleanup
 
 echo "linking openssl"
-brew link --force libressl
+brew link --force openssl
 
 echo ""
 echo ""
