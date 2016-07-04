@@ -20,3 +20,4 @@ then
 }" > $HOME/Library/KeyBindings/DefaultKeyBinding.dict
 fi
 echo "You must reboot for the changes to take."
+echo "You may need to manually set home/end keybindings in osx Terminal home: slash033[H and end: slash033[F"
