@@ -47,10 +47,12 @@ dev_stuff=(
   automake 
   cloc
   cmake 
-  git 
-  ruby-build 
-  go
   erlang
+  git 
+  go
+  ruby-build 
+  scala
+  sbt
 )
 
 echo ""
@@ -71,7 +73,7 @@ brew install caskroom/cask/brew-cask
 casks=(
   cheatsheet
   google-chrome
-  iterm2
+  intellij-idea
   rowanj-gitx
   skype
   vagrant
