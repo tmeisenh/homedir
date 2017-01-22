@@ -28,6 +28,7 @@ core_stuff=(
   findutils
   htop 
   htop-osx 
+  nvm
   openssl
   progress
   rbenv 
