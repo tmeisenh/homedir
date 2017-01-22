@@ -18,7 +18,7 @@ install_brew
 update_brew
 
 core_stuff=(
-  ack 
+  ag
   coreutils 
   dos2unix 
   gawk 
@@ -48,11 +48,9 @@ dev_stuff=(
   cloc
   cmake 
   erlang
+  elixir
   git 
-  go
   ruby-build 
-  scala
-  sbt
 )
 
 echo ""
