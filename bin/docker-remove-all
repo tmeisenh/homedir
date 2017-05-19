@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ docker rm $(docker ps --all --quiet)
+ docker rmi $(docker image ls --quiet)
