@@ -86,11 +86,6 @@ echo ""
 echo "Installing casks..."
 brew cask install "${casks[@]}"
 
-## Install tmux 2.3
-brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/9888d2c21350e3db7732b9783f9368a2d6ad9885/Formula/tmux.rb
-brew pin tmux
-
-
 echo "cleanining up brew..."
 brew cleanup
 
