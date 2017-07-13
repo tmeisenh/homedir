@@ -31,7 +31,6 @@ core_stuff=(
   nvm
   openssl
   progress
-  rbenv 
   reattach-to-user-namespace 
   sqlite 
   tmux 
@@ -51,7 +50,9 @@ dev_stuff=(
   erlang
   elixir
   git 
+  tig
   ruby-build 
+  rbenv
 )
 
 echo ""
