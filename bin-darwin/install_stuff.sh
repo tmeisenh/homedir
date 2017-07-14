@@ -26,7 +26,6 @@ core_stuff=(
   gnutls 
   gnu-tar 
   findutils
-  htop 
   htop-osx 
   nvm
   openssl
