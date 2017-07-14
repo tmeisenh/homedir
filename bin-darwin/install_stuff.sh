@@ -21,6 +21,7 @@ core_stuff=(
   ag
   coreutils 
   dos2unix 
+  emacs --with-cocoa --with-ctags  --with-dbus --with-gnutls --with-imagemagick@6 --with-librsvg --with-modules
   gawk 
   gnupg 
   gnutls 
