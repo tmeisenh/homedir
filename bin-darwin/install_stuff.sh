@@ -70,6 +70,7 @@ brew install caskroom/cask/brew-cask
 
 casks=(
   cheatsheet
+  font-source-code-pro
   google-chrome
   intellij-idea
   rowanj-gitx
