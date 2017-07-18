@@ -48,11 +48,21 @@ dev_stuff=(
   cmake 
   erlang
   elixir
-  emacs --with-cocoa --with-ctags  --with-dbus --with-gnutls --with-imagemagick@6 --with-librsvg --with-modules
+  emacs-plus
   git 
-  global
+  global --with-pygments --with-ctags
   ruby-build 
 )
+
+echo ""
+echo "Installing ctags..."
+brew tap universal-ctags/universal-ctags
+brew install --HEAD universal-ctags
+#brew install ctags --HEAD
+
+echo ""
+echo "Installing pygments..."
+pip install pygments
 
 echo ""
 echo "Installing core brews..."
@@ -61,10 +71,6 @@ brew install "${core_stuff[@]}"
 echo ""
 echo "Installing development brews..."
 brew install "${dev_stuff[@]}"
-
-echo ""
-echo "Installing ctags..."
-brew install ctags --HEAD
 
 echo "Installing caskroom"
 brew install caskroom/cask/brew-cask
