@@ -41,17 +41,16 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     octave
-     vimscript
-     ruby
-     sql
-     (colors :variables colors-enable-nyan-cat-progress-bar t)
      auto-completion
+     c-c++
+     (colors :variables colors-enable-nyan-cat-progress-bar t)
      better-defaults
      dash
+     docker
      elixir
      emacs-lisp
      emoji
+     erlang
      git
      github
      gtags
@@ -60,14 +59,19 @@ values."
      java
      javascript
      markdown
+     nginx
      org
      react
-     slack
+     ruby
      shell
+     slack
      spell-checking
+     sql
+     swift
+     terraform
      tmux
      yaml
-     )
+   )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
@@ -383,7 +387,7 @@ you should place your code here."
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (powerline spinner hydra parent-mode projectile flx iedit anzu goto-chg undo-tree highlight f diminish bind-map bind-key packed s dash pkg-info epl avy async popup helm-gtags ggtags w3 smartparens evil helm helm-core color-theme-solarized color-theme zoom-window yapfify yaml-mode xterm-color vimrc-mode unfill sql-indent smeargle slack emojify circe oauth2 websocket shell-pop rvm ruby-tools ruby-test-mode rubocop rspec-mode robe restclient rbenv rake rainbow-mode rainbow-identifiers pyvenv pytest pyenv-mode py-isort pip-requirements orgit org-projectile org-present org-pomodoro org-download ob-elixir mwim multi-term mmm-mode minitest markdown-toc markdown-mode magit-gitflow magit-gh-pulls load-dir live-py-mode hy-mode htmlize helm-pydoc helm-gitignore helm-dash helm-company helm-c-yasnippet gruvbox-theme autothemer gnuplot gitignore-mode github-search github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gist gh marshal logito pcache ht gh-md fuzzy flyspell-correct-helm flyspell-correct flycheck-mix flycheck-credo flycheck evil-magit magit magit-popup git-commit with-editor eshell-z eshell-prompt-extras esh-help emoji-cheat-sheet-plus dash-at-point dactyl-mode cython-mode company-web web-completion-data company-tern dash-functional company-statistics company-emoji company-emacs-eclim eclim company-anaconda color-identifiers-mode chruby bundler inf-ruby auto-yasnippet auto-dictionary anaconda-mode pythonic all-the-icons memoize font-lock+ alert log4e gntp alchemist company elixir-mode ac-ispell auto-complete web-beautify tern livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc coffee-mode web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode evil-matchit ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
+    (disaster cmake-mode clang-format powerline spinner hydra parent-mode projectile flx iedit anzu goto-chg undo-tree highlight f diminish bind-map bind-key packed s dash pkg-info epl avy async popup helm-gtags ggtags w3 smartparens evil helm helm-core color-theme-solarized color-theme zoom-window yapfify yaml-mode xterm-color vimrc-mode unfill sql-indent smeargle slack emojify circe oauth2 websocket shell-pop rvm ruby-tools ruby-test-mode rubocop rspec-mode robe restclient rbenv rake rainbow-mode rainbow-identifiers pyvenv pytest pyenv-mode py-isort pip-requirements orgit org-projectile org-present org-pomodoro org-download ob-elixir mwim multi-term mmm-mode minitest markdown-toc markdown-mode magit-gitflow magit-gh-pulls load-dir live-py-mode hy-mode htmlize helm-pydoc helm-gitignore helm-dash helm-company helm-c-yasnippet gruvbox-theme autothemer gnuplot gitignore-mode github-search github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gist gh marshal logito pcache ht gh-md fuzzy flyspell-correct-helm flyspell-correct flycheck-mix flycheck-credo flycheck evil-magit magit magit-popup git-commit with-editor eshell-z eshell-prompt-extras esh-help emoji-cheat-sheet-plus dash-at-point dactyl-mode cython-mode company-web web-completion-data company-tern dash-functional company-statistics company-emoji company-emacs-eclim eclim company-anaconda color-identifiers-mode chruby bundler inf-ruby auto-yasnippet auto-dictionary anaconda-mode pythonic all-the-icons memoize font-lock+ alert log4e gntp alchemist company elixir-mode ac-ispell auto-complete web-beautify tern livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc coffee-mode web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode evil-matchit ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
  '(zoom-window-mode-line-color "#8f3f71"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
