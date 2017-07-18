@@ -28,6 +28,7 @@ install-homedir() {
   $cp_cmd -a ${SRC}/spacemacs ${DEST}/.spacemacs
 
   $cp_cmd -a ${SRC}/ctags ${DEST}/.ctags
+  $cp_cmd -a ${SRC}/jsbeautifyrc ${DEST}/.jsbeautifyrc
  
 	echo "DONE with install tasks."
 }
