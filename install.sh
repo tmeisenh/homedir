@@ -25,6 +25,7 @@ install-homedir() {
   $cp_cmd -a ${SRC}/tmux.conf ${DEST}/.tmux.conf
   $cp_cmd -a ${SRC}/tmuxinator ${DEST}/.tmuxinator
 
+  $cp_cmd -a ${SRC}/spacemacs ${DEST}/.spacemacs
 
   $cp_cmd -a ${SRC}/ctags ${DEST}/.ctags
  
