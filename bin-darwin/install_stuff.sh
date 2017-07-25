@@ -17,6 +17,10 @@ update_brew() {
 install_brew
 update_brew
 
+brew tap d12frosted/emacs-plus
+brew tap universal-ctags/universal-ctags
+brew tap caskroom/fonts
+
 core_stuff=(
   ag
   coreutils 
@@ -54,15 +58,6 @@ dev_stuff=(
   ruby-build 
 )
 
-echo ""
-echo "Installing ctags..."
-brew tap universal-ctags/universal-ctags
-brew install --HEAD universal-ctags
-#brew install ctags --HEAD
-
-echo ""
-echo "Installing pygments..."
-pip install pygments
 
 echo ""
 echo "Installing core brews..."
@@ -71,6 +66,8 @@ brew install "${core_stuff[@]}"
 echo ""
 echo "Installing development brews..."
 brew install "${dev_stuff[@]}"
+brew install --HEAD universal-ctags
+pip install pygments
 
 echo "Installing caskroom"
 brew install caskroom/cask/brew-cask
@@ -88,7 +85,6 @@ casks=(
   vlc
 )
 
-brew tap caskroom/fonts
 
 echo ""
 echo "Installing casks..."
