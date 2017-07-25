@@ -56,6 +56,7 @@ dev_stuff=(
   git 
   global --with-pygments --with-ctags
   ruby-build 
+  tig
 )
 
 
