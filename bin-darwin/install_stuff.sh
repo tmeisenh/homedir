@@ -55,6 +55,7 @@ dev_stuff=(
   emacs-plus
   git 
   global --with-pygments --with-ctags
+  ispell
   ruby-build 
   tig
 )
