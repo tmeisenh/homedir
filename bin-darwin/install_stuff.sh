@@ -58,6 +58,7 @@ dev_stuff=(
   ispell
   ruby-build 
   tig
+  tmux
 )
 
 
