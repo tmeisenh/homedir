@@ -78,8 +78,9 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
                                       all-the-icons      ;; Allow icons to be used in places where it makes senseall-the-icons
+                                      eslintd-fix        ;; run eslint --fix on save
                                       gruvbox-theme      ;; The best colors
-                                      groovy-mode
+                                      groovy-mode        ;; 
                                       restclient         ;; A built in restclient similar to Postman
                                       zoom-window        ;; Zoom frames like tmux zooms panes
                                       color-theme-solarized
@@ -374,26 +375,36 @@ you should place your code here."
    web-mode-code-indent-offset 2
    web-mode-attr-indent-offset 2)
 
-  (add-to-list 'auto-mode-alist '("Jenkinsfile$" . groovy-mode))
-  )
+  (add-hook 'js2-mode-hook 'eslintd-fix-mode)
+  (add-hook 'react-mode-hook 'eslintd-fix-mode)
 
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector
-   ["#0a0814" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#28def0" "#b2b2b2"])
- '(evil-want-Y-yank-to-eol nil)
- '(package-selected-packages
-   (quote
-    (groovy-mode disaster cmake-mode clang-format powerline spinner hydra parent-mode projectile flx iedit anzu goto-chg undo-tree highlight f diminish bind-map bind-key packed s dash pkg-info epl avy async popup helm-gtags ggtags w3 smartparens evil helm helm-core color-theme-solarized color-theme zoom-window yapfify yaml-mode xterm-color vimrc-mode unfill sql-indent smeargle slack emojify circe oauth2 websocket shell-pop rvm ruby-tools ruby-test-mode rubocop rspec-mode robe restclient rbenv rake rainbow-mode rainbow-identifiers pyvenv pytest pyenv-mode py-isort pip-requirements orgit org-projectile org-present org-pomodoro org-download ob-elixir mwim multi-term mmm-mode minitest markdown-toc markdown-mode magit-gitflow magit-gh-pulls load-dir live-py-mode hy-mode htmlize helm-pydoc helm-gitignore helm-dash helm-company helm-c-yasnippet gruvbox-theme autothemer gnuplot gitignore-mode github-search github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gist gh marshal logito pcache ht gh-md fuzzy flyspell-correct-helm flyspell-correct flycheck-mix flycheck-credo flycheck evil-magit magit magit-popup git-commit with-editor eshell-z eshell-prompt-extras esh-help emoji-cheat-sheet-plus dash-at-point dactyl-mode cython-mode company-web web-completion-data company-tern dash-functional company-statistics company-emoji company-emacs-eclim eclim company-anaconda color-identifiers-mode chruby bundler inf-ruby auto-yasnippet auto-dictionary anaconda-mode pythonic all-the-icons memoize font-lock+ alert log4e gntp alchemist company elixir-mode ac-ispell auto-complete web-beautify tern livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc coffee-mode web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode evil-matchit ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
- '(zoom-window-mode-line-color "#8f3f71"))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+  (add-to-list 'auto-mode-alist '("Jenkinsfile$" . groovy-mode))
+
+  ;; https://github.com/purcell/exec-path-from-shell
+  ;; only need exec-path-from-shell on OSX
+  ;; this hopefully sets up path and other vars better
+  (exec-path-from-shell-initialize)
+
+
+  (setq flycheck-disabled-checkers '(javascript-jshint))
+  (setq flycheck-checkers '(javascript-eslint))
+  (with-eval-after-load 'flycheck
+    (dolist (checker '(javascript-eslint javascript-standard))
+      (flycheck-add-mode checker 'react-mode)))
+
+  (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
+
+  (defun stylelint-fix-file ()
+    (interactive)
+    (message "stylelint --fix for file " (buffer-file-name))
+    (shell-command (concat "stylelint --fix " (buffer-file-name))))
+
+  (defun stylelint-fix-file-and-revert ()
+    (interactive)
+    (stylelint-fix-file)
+    (revert-buffer t t))
+
+  (add-hook 'scss-mode-hook
+            (lambda ()
+              (add-hook 'after-save-hook #'stylelint-fix-file-and-revert nil 'make-it-local)))
+  )
