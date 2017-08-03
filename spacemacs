@@ -78,6 +78,7 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
                                       all-the-icons      ;; Allow icons to be used in places where it makes senseall-the-icons
+                                      all-the-icons-dired;; Use the pretty icons in dir mode
                                       eslintd-fix        ;; run eslint --fix on save
                                       gruvbox-theme      ;; The best colors
                                       groovy-mode        ;; 
@@ -250,7 +251,7 @@ values."
    dotspacemacs-loading-progress-bar t
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup nil
+   dotspacemacs-fullscreen-at-startup t
    ;; If non nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
    dotspacemacs-fullscreen-use-non-native nil
@@ -408,3 +409,5 @@ you should place your code here."
             (lambda ()
               (add-hook 'after-save-hook #'stylelint-fix-file-and-revert nil 'make-it-local)))
   )
+
+  ;; Junk below here
