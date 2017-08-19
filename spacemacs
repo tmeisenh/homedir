@@ -376,22 +376,26 @@ you should place your code here."
    web-mode-code-indent-offset 2
    web-mode-attr-indent-offset 2)
 
+  (setq js2-mode-show-parse-errors nil
+        js2-mode-show-strict-warnings nil
+        flycheck-disabled-checkers '(javascript-jshint)
+        flycheck-checkers '(javascript-eslint))
+
+  (with-eval-after-load 'flycheck
+    (dolist (checker '(javascript-eslint javascript-standard))
+      (flycheck-add-mode checker 'react-mode)))
+
+  (add-hook 'react-mode-hook 'flycheck-mode)
+  (add-hook 'js2-mode-hook 'flycheck-mode)
+  (add-hook 'scss-mode-hook 'flycheck-mode)
+
   (add-hook 'js2-mode-hook 'eslintd-fix-mode)
   (add-hook 'react-mode-hook 'eslintd-fix-mode)
-
-  (add-to-list 'auto-mode-alist '("Jenkinsfile$" . groovy-mode))
 
   ;; https://github.com/purcell/exec-path-from-shell
   ;; only need exec-path-from-shell on OSX
   ;; this hopefully sets up path and other vars better
   (exec-path-from-shell-initialize)
-
-
-  (setq flycheck-disabled-checkers '(javascript-jshint))
-  (setq flycheck-checkers '(javascript-eslint))
-  (with-eval-after-load 'flycheck
-    (dolist (checker '(javascript-eslint javascript-standard))
-      (flycheck-add-mode checker 'react-mode)))
 
   (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
 
@@ -408,6 +412,7 @@ you should place your code here."
   (add-hook 'scss-mode-hook
             (lambda ()
               (add-hook 'after-save-hook #'stylelint-fix-file-and-revert nil 'make-it-local)))
-  )
+
+  (add-to-list 'auto-mode-alist '("Jenkinsfile$" . groovy-mode))
 
   ;; Junk below here
