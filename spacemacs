@@ -71,7 +71,7 @@ values."
      terraform
      tmux
      yaml
-   )
+     )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
@@ -415,4 +415,5 @@ you should place your code here."
 
   (add-to-list 'auto-mode-alist '("Jenkinsfile$" . groovy-mode))
 
-  ;; Junk below here
+  )
+;; Junk below here
