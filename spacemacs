@@ -71,7 +71,7 @@ values."
      terraform
      tmux
      yaml
-   )
+     )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
@@ -148,8 +148,8 @@ values."
    ;; `recents' `bookmarks' `projects' `agenda' `todos'."
    ;; List sizes may be nil, in which case
    ;; `spacemacs-buffer-startup-lists-length' takes effect.
-   dotspacemacs-startup-lists '((recents . 5)
-                                (projects . 7))
+   dotspacemacs-startup-lists '((recents . 0)
+                                (projects . 10))
    ;; True if the home buffer should respond to resize events.
    dotspacemacs-startup-buffer-responsive t
    ;; Default major mode of the scratch buffer (default `text-mode')
@@ -251,14 +251,14 @@ values."
    dotspacemacs-loading-progress-bar t
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup t
+   dotspacemacs-fullscreen-at-startup nil
    ;; If non nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
    dotspacemacs-fullscreen-use-non-native nil
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -378,22 +378,26 @@ you should place your code here."
    web-mode-code-indent-offset 2
    web-mode-attr-indent-offset 2)
 
+  (setq js2-mode-show-parse-errors nil
+        js2-mode-show-strict-warnings nil
+        flycheck-disabled-checkers '(javascript-jshint)
+        flycheck-checkers '(javascript-eslint))
+
+  (with-eval-after-load 'flycheck
+    (dolist (checker '(javascript-eslint javascript-standard))
+      (flycheck-add-mode checker 'react-mode)))
+
+  (add-hook 'react-mode-hook 'flycheck-mode)
+  (add-hook 'js2-mode-hook 'flycheck-mode)
+  (add-hook 'scss-mode-hook 'flycheck-mode)
+
   (add-hook 'js2-mode-hook 'eslintd-fix-mode)
   (add-hook 'react-mode-hook 'eslintd-fix-mode)
-
-  (add-to-list 'auto-mode-alist '("Jenkinsfile$" . groovy-mode))
 
   ;; https://github.com/purcell/exec-path-from-shell
   ;; only need exec-path-from-shell on OSX
   ;; this hopefully sets up path and other vars better
   (exec-path-from-shell-initialize)
-
-
-  (setq flycheck-disabled-checkers '(javascript-jshint))
-  (setq flycheck-checkers '(javascript-eslint))
-  (with-eval-after-load 'flycheck
-    (dolist (checker '(javascript-eslint javascript-standard))
-      (flycheck-add-mode checker 'react-mode)))
 
   (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
 
@@ -410,6 +414,8 @@ you should place your code here."
   (add-hook 'scss-mode-hook
             (lambda ()
               (add-hook 'after-save-hook #'stylelint-fix-file-and-revert nil 'make-it-local)))
-  )
 
-  ;; Junk below here
+  (add-to-list 'auto-mode-alist '("Jenkinsfile$" . groovy-mode))
+
+  )
+;; Junk below here
