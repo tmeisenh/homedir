@@ -2,14 +2,14 @@
 
 pkgs=(
 tern 
-eslint@3.19 
-eslint_d@4.2.5 
-babel-eslint@7.2.2 
-eslint-plugin-react@7.1.0 
-eslint-config-airbnb@15.1.0 
-eslint-plugin-import@2.7.0 
+eslint@4.9.0
+eslint_d@5.1.0
+babel-eslint@8.0.1
+eslint-plugin-react@7.4.0 
+eslint-config-airbnb@16.1.0 
+eslint-plugin-import@2.8.0 
 eslint-plugin-mocha@4.11.0
-eslint-plugin-jsx-a11y@5.1.1 
+eslint-plugin-jsx-a11y@6.0.2
 eslint-plugin-promise@3.5.0
 )
 
@@ -21,4 +21,6 @@ for i in ${pkgs[@]}; do
   npm uninstall -g ${pkg}
 done
 
-#npm install -g "${pkgs[@]}"
+npm install -g "${pkgs[@]}"
+
+echo "Be sure to kill any running eslint_d server!"
