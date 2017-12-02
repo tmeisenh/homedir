@@ -70,6 +70,7 @@ values."
      swift
      terraform
      tmux
+     vimscript
      yaml
      )
    ;; List of additional packages that will be installed without being
