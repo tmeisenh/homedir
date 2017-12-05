@@ -149,7 +149,7 @@ values."
    ;; `recents' `bookmarks' `projects' `agenda' `todos'."
    ;; List sizes may be nil, in which case
    ;; `spacemacs-buffer-startup-lists-length' takes effect.
-   dotspacemacs-startup-lists '((recents . 0)
+   dotspacemacs-startup-lists '((recents . 5)
                                 (projects . 10))
    ;; True if the home buffer should respond to resize events.
    dotspacemacs-startup-buffer-responsive t
@@ -418,5 +418,18 @@ you should place your code here."
 
   (add-to-list 'auto-mode-alist '("Jenkinsfile$" . groovy-mode))
 
+  ;; Org mode
+  (setq org-directory "~/Documents/org")
+
+  ;; MobileOrg
+  (setq org-mobile-directory "~/Dropbox/MobileOrg")
+  (setq org-mobile-inbox-for-pull (concat org-directory "/index.org"))
+
+  ;; SPACE m m p
+  ;; SPACE m m l
+  (evil-leader/set-key-for-mode 'org-mode
+    "mp" 'org-mobile-push
+    "ml" 'org-mobile-pull
+    )
   )
 ;; Junk below here
