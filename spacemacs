@@ -86,6 +86,7 @@ values."
                                       restclient         ;; A built in restclient similar to Postman
                                       zoom-window        ;; Zoom frames like tmux zooms panes
                                       color-theme-solarized
+                                      coin-ticker
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -431,6 +432,16 @@ you should place your code here."
   (evil-leader/set-key-for-mode 'org-mode
     "mp" 'org-mobile-push
     "ml" 'org-mobile-pull
-    )
   )
+
+  (require 'coin-ticker)
+  (setq coin-ticker-api-poll-interval 30)
+  (setq coin-ticker-syms '("BTC" "ETH" "LTC"))
+  ;; Optional: Just show prices (and no symbols)
+  (setq coin-ticker-show-syms 1)
+  (setq coin-ticker-price-convert "USD")
+  (setq coin-ticker-price-symbol "$")
+  (coin-ticker-mode 1)
+
+  ) ;; end user-config
 ;; Junk below here
