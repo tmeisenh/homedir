@@ -1,4 +1,7 @@
 #!/bin/bash
 
- docker rm $(docker ps --all --quiet)
- docker rmi $(docker image ls --quiet)
+docker rm $(docker ps --all --quiet)
+docker rmi $(docker image ls --quiet)
+
+dockerSize=`du -csh ~/Library/Containers/com.docker.docker/Data | tail -n +2 | cut -f 1`
+echo "Consider resetting Docker if this value is significantly over 1.3GB: ${dockerSize}"
