@@ -52,3 +52,13 @@ gpg --list-keys
   encrypted_file=${file}.encrypted
   openssl rsautl -decrypt -inkey ${private_key} -in ${encrypted_key} -out ${key}
   openssl enc -d -aes-256-cbc -kfile ${key} -in ${encrypted_file} -out ${file}
+* program vortex race3 keyboard
+  - switch to the appropriate layer
+  - Right-Control plus FN to enter into programming mode
+    - solid blue light on the right side of the space bar is on
+  - Press the target key until the key bottoms out
+    - flashing red light on the right side of the space bar is on
+  - Press the destination key or key sequence
+  - Press PN to "commit"
+    - solid blue light on the right side of the space bar is on
+  - Press Right-Control plus FN to end programming mode.
