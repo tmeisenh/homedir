@@ -37,6 +37,7 @@ core_stuff=(
     rbenv
     reattach-to-user-namespace
     sqlite
+    tig
     unrar
     vim --env-std --override-system-vim
     vimpager
