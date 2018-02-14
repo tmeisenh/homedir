@@ -22,43 +22,43 @@ brew tap universal-ctags/universal-ctags
 brew tap caskroom/fonts
 
 core_stuff=(
-  ag
-  coreutils 
-  dos2unix 
-  gawk 
-  gnupg 
-  gnutls 
-  gnu-tar 
-  findutils
-  htop-osx 
-  nvm
-  openssl
-  progress
-  rbenv 
-  reattach-to-user-namespace 
-  sqlite 
-  unrar 
-  vim --env-std --override-system-vim 
-  vimpager 
-  watch
-  wget 
-  xctool 
-  zsh 
+    ag
+    coreutils
+    dos2unix
+    gawk
+    gnupg
+    gnutls
+    gnu-tar
+    findutils
+    htop-osx
+    nvm
+    openssl
+    progress
+    rbenv
+    reattach-to-user-namespace
+    sqlite
+    unrar
+    vim --env-std --override-system-vim
+    vimpager
+    watch
+    wget
+    xctool
+    zsh
 )
 
 dev_stuff=(
-  automake 
-  cloc
-  cmake 
-  erlang
-  elixir
-  emacs-plus
-  git 
-  global --with-pygments --with-ctags
-  ispell
-  ruby-build 
-  tig
-  tmux
+    automake
+    cloc
+    cmake
+    erlang
+    elixir
+    emacs-plus
+    git
+    global --with-pygments --with-ctags
+    ispell
+    ruby-build
+    tig
+    tmux
 )
 
 
@@ -76,16 +76,17 @@ echo "Installing caskroom"
 brew install caskroom/cask/brew-cask
 
 casks=(
-  cheatsheet
-  font-source-code-pro
-  google-chrome
-  intellij-idea
-  rowanj-gitx
-  skype
-  vagrant
-  vagrant-manager
-  virtualbox
-  vlc
+    cheatsheet
+    aerial
+    font-source-code-pro
+    google-chrome
+    intellij-idea
+    rowanj-gitx
+    skype
+    vagrant
+    vagrant-manager
+    virtualbox
+    vlc
 )
 
 
