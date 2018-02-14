@@ -99,6 +99,9 @@ brew cleanup
 echo "linking openssl"
 brew link --force openssl
 
+echo "linking emacs"
+brew linkapps emacs-plus
+
 echo ""
 echo ""
 echo "All done with basic install"
