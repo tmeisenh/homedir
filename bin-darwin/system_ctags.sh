@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # updates system ctags file
 
 cd /System/Library/Frameworks

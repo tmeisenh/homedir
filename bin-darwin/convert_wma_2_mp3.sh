@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # remove spaces and replace with _
 for i in *.wma; do mv "$i" `echo $i | tr ' ' '_'`; done

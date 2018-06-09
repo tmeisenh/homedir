@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Launches a Docker container as a playground.
 # Convention is $1 points to a directory that contains a Dockerfile

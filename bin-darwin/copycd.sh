@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # Wrapper script to make diskimages of audio/data/vcd using cdrdao
 # Version: $Id$
 

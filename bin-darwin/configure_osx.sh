@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # Compiled from:
 #   https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 #   https://gist.github.com/millermedeiros/6615994

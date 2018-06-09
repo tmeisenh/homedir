@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Apple Script wrapped in a bash script (for ease of use)
 # that sets the sound output to the headphones.

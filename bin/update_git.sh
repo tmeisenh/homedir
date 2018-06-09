@@ -1,4 +1,5 @@
-#/bin/bash
+#!/usr/bin/env bash
+
 # Update all git directories below current directory or specified directory
 # Skips directories that contain a file called .ignore
 # @see http://stackoverflow.com/questions/11981716/how-to-quickly-find-all-git-repos-under-a-directory

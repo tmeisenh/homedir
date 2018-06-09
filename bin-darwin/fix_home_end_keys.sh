@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-if [[ ! -d $HOME/Library/KeyBindings ]] 
+if [[ ! -d $HOME/Library/KeyBindings ]]
 then
   mkdir $HOME/Library/KeyBindings
 fi

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # Apple script
 cd /System/Library/Frameworks/JavaVM.framework/Versions
 

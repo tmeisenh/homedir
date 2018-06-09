@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Installs homebrew and all my brews
 
 install_brew() {

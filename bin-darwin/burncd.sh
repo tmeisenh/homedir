@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/usr/bin/env bash
 #
 # Wrapper script to make writing a cd easier using cdrdao
 # Version: $Id$

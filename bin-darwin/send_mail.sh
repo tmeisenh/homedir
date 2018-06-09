@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
-# Wrapper script for mailx that makes sending email, even 
+# Wrapper script for mailx that makes sending email, even
 # with attachments much easier. For text files you might need
 # to convert the line endings.
 #
