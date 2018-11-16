@@ -8,4 +8,4 @@ if [ ! -f "$(which brew)" ]; then
 fi
 
 (brew update && brew upgrade ; brew doctor ; brew cleanup)
-(brew cask update ; brew cask doctor ; brew cask cleanup)
+(brew cask update ; brew cask doctor)
