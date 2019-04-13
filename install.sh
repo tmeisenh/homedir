@@ -18,17 +18,10 @@ install-homedir() {
 	$cp_cmd -a ${SRC}/bin-freebsd ${DEST}/bin-freebsd
 	$cp_cmd -a ${SRC}/bin-darwin ${DEST}/bin-darwin
 
-  echo "setting up git..."
+  echo "setting up dev tools..."
   $cp_cmd -a ${SRC}/git/gitconfig ${DEST}/.gitconfig
-
-  echo "setting up tmux..."
   $cp_cmd -a ${SRC}/tmux.conf ${DEST}/.tmux.conf
-  $cp_cmd -a ${SRC}/tmuxinator ${DEST}/.tmuxinator
-
-  $cp_cmd -a ${SRC}/spacemacs ${DEST}/.spacemacs
-
   $cp_cmd -a ${SRC}/ctags ${DEST}/.ctags
-  $cp_cmd -a ${SRC}/jsbeautifyrc ${DEST}/.jsbeautifyrc
  
 	echo "DONE with install tasks."
 }
@@ -42,7 +35,6 @@ uninstall-homedir() {
 	$rm_cmd -rf ${DEST}/how-to
 	$rm_cmd -rf ${DEST}/.gitconfig
 	$rm_cmd -rf ${DEST}/.tmux.conf
-  $rm_cmd -rf ${DEST}/.tmuxinator
   $rm_cmd -rf ${DEST}/.ctags
 }
 
