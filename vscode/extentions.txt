@@ -1,0 +1,5 @@
+editor config for vs code
+eslint
+jest snippets
+js jsx snippets
+npm intellisense
