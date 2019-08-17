@@ -21,9 +21,12 @@
 [alias]
     br = branch
     ci = commit -v
+    cia = commit --amend --no-edit
     co = checkout
+    dc = diff --cached
     di = diff
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    p = push -u origin HEAD
     st = status
     staged = diff --staged
     sub = submodule update --init --recursive
