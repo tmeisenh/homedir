@@ -3,3 +3,4 @@ eslint
 jest snippets
 js jsx snippets
 npm intellisense
+gitlens

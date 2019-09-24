@@ -5,7 +5,7 @@
 	"editor.cursorStyle": "line-thin",
 	"editor.fontFamily": "Source Code Pro",
 	"editor.fontSize": 18,
-	"editor.fontWeight": "300",
+	"editor.fontWeight": "400",
 	"editor.renderWhitespace": "none",
 	"editor.minimap.enabled": false,
 	"editor.minimap.maxColumn": 60,
