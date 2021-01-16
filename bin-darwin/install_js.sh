@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# legacy emacs
+
 pkgs=(
     tern
     eslint@4.9.0
